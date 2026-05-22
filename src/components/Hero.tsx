@@ -1,26 +1,42 @@
-import { useEffect, useState } from 'react';
-import { ArrowRight, Star, Leaf, Zap, TrendingUp, ChevronDown } from 'lucide-react';
+import { useEffect, useState } from "react";
+import {
+  ArrowRight,
+  Star,
+  Leaf,
+  Zap,
+  TrendingUp,
+  ChevronDown,
+} from "lucide-react";
+
+// IMPORT GAMBAR AYAM GEPREK
+import ayamGeprek from "../assets/Ayam_Geprek.jpg";
+import Salad from "../assets/Kunir.jpg";
+import Foto from "../assets/Bule.png";
 
 const badges = [
-  { icon: Leaf, label: 'Fresh Ingredients', color: 'from-sage to-olive' },
-  { icon: Zap, label: 'Fast Delivery', color: 'from-gold to-muted-orange' },
-  { icon: TrendingUp, label: 'Best Seller', color: 'from-muted-orange to-gold' },
+  { icon: Leaf, label: "Fresh Ingredients", color: "from-sage to-olive" },
+  { icon: Zap, label: "Fast Delivery", color: "from-gold to-muted-orange" },
+  {
+    icon: TrendingUp,
+    label: "Best Seller",
+    color: "from-muted-orange to-gold",
+  },
 ];
 
 const floatingCards = [
   {
-    img: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400',
-    label: 'Grilled Salmon Bowl',
-    rating: '4.9',
-    price: '$18.90',
-    delay: '0s',
+    img: ayamGeprek,
+    label: "Nasi Ayam Geprek",
+    rating: "4.9",
+    price: "Rp12K",
+    delay: "0s",
   },
   {
-    img: 'https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=400',
-    label: 'Premium Burger',
-    rating: '4.8',
-    price: '$14.50',
-    delay: '1.5s',
+    img: Salad,
+    label: "Kunir Asem",
+    rating: "4.8",
+    price: "Rp6K",
+    delay: "1.5s",
   },
 ];
 
@@ -33,8 +49,8 @@ export default function Hero() {
   }, []);
 
   const scrollDown = () => {
-    const el = document.getElementById('about');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById("about");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -46,8 +62,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1920')",
+          backgroundImage: `url(${ayamGeprek})`,
         }}
       />
 
@@ -65,7 +80,7 @@ export default function Hero() {
           {/* Left: Text */}
           <div
             className={`transition-all duration-1000 ${
-              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             {/* Badges */}
@@ -75,63 +90,94 @@ export default function Hero() {
                   key={label}
                   className="flex items-center gap-1.5 glass px-3.5 py-1.5 rounded-full"
                 >
-                  <div className={`w-5 h-5 rounded-full bg-gradient-to-br ${color} flex items-center justify-center`}>
+                  <div
+                    className={`w-5 h-5 rounded-full bg-gradient-to-br ${color} flex items-center justify-center`}
+                  >
                     <Icon size={11} className="text-white" />
                   </div>
-                  <span className="text-beige-light text-xs font-inter font-500 tracking-wide">{label}</span>
+                  <span className="text-beige-light text-xs font-inter font-500 tracking-wide">
+                    {label}
+                  </span>
                 </div>
               ))}
             </div>
 
             {/* Headline */}
             <h1 className="font-montserrat font-900 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-beige-light leading-[1.1] mb-6">
-              Delicious Food,{' '}
+              Kuliner Berkualitas
               <span className="block mt-1">
-                <span className="text-gradient">Crafted With</span>
+                <span className="text-gradient">untuk Keluarga</span>
               </span>
-              <span className="block">Passion.</span>
+              <span className="block">Indonesia</span>
             </h1>
 
             <p className="font-inter text-base sm:text-lg text-beige-sand/80 leading-relaxed mb-10 max-w-lg">
-              Modern takeaway dining experience with premium ingredients and unforgettable flavor.
+              Melayani pemesanan langsung dan pre-order dengan cita rasa
+              autentik yang terjaga
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="#menu"
-                onClick={e => {
+                href="#HowToOrder"
+                onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("HowToOrder")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="btn-primary flex items-center gap-2.5 font-poppins group relative z-10"
               >
                 Order Now
-                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRight
+                  size={18}
+                  className="transition-transform group-hover:translate-x-1"
+                />
               </a>
+
               <a
                 href="#menu"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById("menu")
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="btn-secondary flex items-center gap-2.5 font-poppins"
               >
-                Explore Menu
+                Lihat Menu
               </a>
             </div>
 
             {/* Stats */}
             <div className="flex gap-8 mt-12">
               {[
-                { value: '5K+', label: 'Happy Customers' },
-                { value: '4.9', label: 'Average Rating', sub: <span className="flex ml-1">{[...Array(5)].map((_, i) => <Star key={i} size={10} fill="#C8A96B" className="text-gold" />)}</span> },
-                { value: '30+', label: 'Menu Varieties' },
-              ].map(stat => (
+                { value: "1K+", label: "Happy Customers" },
+                {
+                  value: "4.9",
+                  label: "Average Rating",
+                  sub: (
+                    <span className="flex ml-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          size={10}
+                          fill="#C8A96B"
+                          className="text-gold"
+                        />
+                      ))}
+                    </span>
+                  ),
+                },
+                { value: "5+", label: "Menu Varieties" },
+              ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-montserrat font-800 text-2xl text-gradient">{stat.value}</div>
+                  <div className="font-montserrat font-800 text-2xl text-gradient">
+                    {stat.value}
+                  </div>
                   <div className="font-inter text-xs text-beige-sand/70 flex items-center mt-0.5 whitespace-nowrap">
-                    {stat.label}{stat.sub}
+                    {stat.label}
+                    {stat.sub}
                   </div>
                 </div>
               ))}
@@ -141,14 +187,14 @@ export default function Hero() {
           {/* Right: Floating Cards */}
           <div
             className={`hidden lg:block relative h-[520px] transition-all duration-1200 delay-300 ${
-              loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             {/* Main hero image card */}
             <div className="absolute inset-8 rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
               <img
-                src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Premium food"
+                src={Foto}
+                alt="Hero Foto"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-brown/60 to-transparent" />
@@ -162,16 +208,25 @@ export default function Hero() {
                 style={{
                   animationDelay: card.delay,
                   ...(i === 0
-                    ? { bottom: '60px', left: '-10px', width: '190px' }
-                    : { top: '50px', right: '-10px', width: '180px' }),
+                    ? { bottom: "60px", left: "-10px", width: "190px" }
+                    : { top: "50px", right: "-10px", width: "180px" }),
                 }}
               >
-                <img src={card.img} alt={card.label} className="w-full h-24 object-cover rounded-xl mb-2.5" />
-                <div className="font-poppins font-600 text-beige-light text-xs leading-snug">{card.label}</div>
+                <img
+                  src={card.img}
+                  alt={card.label}
+                  className="w-full h-24 object-cover rounded-xl mb-3"
+                />
+                <div className="font-poppins font-600 text-beige-light text-xs leading-snug">
+                  {card.label}
+                </div>
                 <div className="flex items-center justify-between mt-1.5">
-                  <span className="text-gold font-inter font-700 text-sm">{card.price}</span>
+                  <span className="text-gold font-inter font-700 text-sm">
+                    {card.price}
+                  </span>
                   <span className="flex items-center gap-1 text-beige-sand/70 text-xs">
-                    <Star size={10} fill="#C8A96B" className="text-gold" />{card.rating}
+                    <Star size={10} fill="#C8A96B" className="text-gold" />
+                    {card.rating}
                   </span>
                 </div>
               </div>
@@ -188,7 +243,9 @@ export default function Hero() {
         onClick={scrollDown}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-beige-sand/50 hover:text-gold transition-colors group"
       >
-        <span className="font-inter text-xs tracking-[0.2em] uppercase">Scroll</span>
+        <span className="font-inter text-xs tracking-[0.2em] uppercase">
+          Scroll
+        </span>
         <ChevronDown size={18} className="animate-bounce" />
       </button>
     </section>
