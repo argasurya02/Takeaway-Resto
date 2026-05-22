@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { Plus, BadgeCheck } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
+
 import ayamGeprek from "../assets/Ayam_Geprek.jpg";
 import Salad from "../assets/Salad.jpg";
 import Kunir from "../assets/Kunir.jpg";
@@ -159,10 +160,6 @@ export default function Menu() {
                     Favorit
                   </div>
                 )}
-
-                <button className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-dark-brown/80 backdrop-blur-sm flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-gold hover:text-dark-brown shadow-lg">
-                  <Plus size={17} strokeWidth={2.5} />
-                </button>
               </div>
 
               {/* Content */}

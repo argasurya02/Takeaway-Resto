@@ -14,35 +14,35 @@ import workshop from "../assets/Galery/Workshop.png";
 const images = [
   {
     src: Bule,
-    alt: "Nasi Ayam Geprek",
+    alt: "Foto",
   },
   {
     src: Disneyland,
-    alt: "Salad Segar",
+    alt: "Foto",
   },
   {
     src: Halal,
-    alt: "Menu Favorit",
+    alt: "Foto",
   },
   {
     src: FotoPiagam,
-    alt: "Prestasi & Seminar",
+    alt: "Foto",
   },
   {
     src: juara,
-    alt: "Ayam Krispy",
+    alt: "Foto",
   },
   {
     src: masjid,
-    alt: "Healthy Food",
+    alt: "Foto",
   },
   {
     src: ramean,
-    alt: "Takeway Resto",
+    alt: "Foto",
   },
   {
     src: workshop,
-    alt: "Kegiatan Komunitas",
+    alt: "Foto",
   },
 ];
 
