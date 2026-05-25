@@ -208,7 +208,7 @@ export default function Location() {
                   </div>
 
                   <div className="font-inter text-sm text-dark-brown/65">
-                    +62 812-3456-7890
+                    +62 812-3502-8932
                   </div>
                 </div>
               </a>
