@@ -150,18 +150,19 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="flex gap-8 mt-12">
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 mt-12 max-w-md mx-auto lg:mx-0">
               {[
                 { value: "1K+", label: "Happy Customers" },
                 {
                   value: "4.9",
                   label: "Average Rating",
                   sub: (
-                    <span className="flex ml-1">
+                    <span className="flex ml-1 shrink-0">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          size={10}
+                          size={9}
                           fill="#C8A96B"
                           className="text-gold"
                         />
@@ -171,12 +172,15 @@ export default function Hero() {
                 },
                 { value: "5+", label: "Menu Varieties" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="font-montserrat font-800 text-2xl text-gradient">
+                <div
+                  key={stat.label}
+                  className="text-center bg-black/10 sm:bg-transparent p-2 sm:p-0 rounded-xl flex flex-col justify-center items-center"
+                >
+                  <div className="font-montserrat font-800 text-xl sm:text-2xl text-gradient">
                     {stat.value}
                   </div>
-                  <div className="font-inter text-xs text-beige-sand/70 flex items-center mt-0.5 whitespace-nowrap">
-                    {stat.label}
+                  <div className="font-inter text-[10px] sm:text-xs text-beige-sand/70 flex flex-wrap justify-center items-center mt-0.5 text-center leading-tight">
+                    <span>{stat.label}</span>
                     {stat.sub}
                   </div>
                 </div>
